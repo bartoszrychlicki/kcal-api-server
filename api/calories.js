@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       const data = await airtableRes.json()
       console.log('Liczba rekordów:', data.records?.length)
       const caloriesLeftTodayRaw = data?.records?.[0]?.fields?.["Calories left today"] || 0;
-      const caloriesLeftToday = Math.round(caloriesLeftTodayRaw);
+      const caloriesLeftToday = -Math.round(caloriesLeftTodayRaw);
 
       res.status(200).json({ caloriesLeftToday })
     } catch (err) {
