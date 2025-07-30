@@ -1,24 +1,47 @@
 {
   "name": "kcal-api-server",
   "version": "1.0.0",
-  "description": "Prosty endpoint API hostowany na Vercel, który pobiera dzienną wartość kalorii z Airtable i zwraca ją jako JSON. Może być używany np. przez widget na Apple Watchu.",
-  "main": "index.js",
+  "description": "A lightweight, serverless API built for Vercel that fetches daily calorie data from Airtable and serves it as JSON. Perfect for integrating with Apple Watch widgets, mobile apps, or any health tracking application.",
+  "main": "api/calories.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "lint": "echo 'No linting configured yet'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vercel dev",
+    "env:example": "cp .env.example .env.local && echo 'Created .env.local from template. Please update with your actual values.'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bartoszrychlicki/kcal-api-server.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "serverless",
+    "vercel",
+    "airtable",
+    "calories",
+    "health",
+    "nutrition",
+    "apple-watch",
+    "widget",
+    "fitness"
+  ],
+  "author": "Bartosz Rychlicki",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bartoszrychlicki/kcal-api-server/issues"
   },
   "homepage": "https://github.com/bartoszrychlicki/kcal-api-server#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
-    "dotenv": "^17.2.0",
+    "dotenv": "^17.2.0"
+  },
+  "devDependencies": {
     "vercel": "^44.5.2"
   }
 }
